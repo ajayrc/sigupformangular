@@ -2,8 +2,11 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false
+export const environment = { // fyi - env specific values go here
+  production: false,
+  ISITREALMAIL_API_URL: "https://isitarealemail.com/api/email/validate",
+  EMAIL_VALIDATION_API_KEY:  "c15bc917-d563-43c6-a12e-82f11c26c732", 
+  DEMO_API_SIGNUP_USER: "https://demo-api.now.sh/users"
 };
 
 /*

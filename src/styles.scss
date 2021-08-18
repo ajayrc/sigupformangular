@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+// global resets/styles
+html, body { height: 100%; } 
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// import external styling/component libraries - also see angular.json - styles and scripts configs
+@import '~bootstrap/dist/css/bootstrap.min.css'; // layout of this app can be also done using css grid and flex box for a simple setup
+// above is to showcase how to integrate 3rd party styling libraries with anuglar

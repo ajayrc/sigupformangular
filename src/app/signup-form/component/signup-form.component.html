@@ -1,0 +1,170 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <form [formGroup]="signupForm" novalidate (ngSubmit)="onSubmit()">
+        <mat-card class="shipping-card">
+          <mat-card-header>
+            <mat-card-title>Sign Up</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <input
+                    matInput
+                    autofocus
+                    placeholder="First name"
+                    formControlName="firstName"
+                    maxlength="100"
+                  />
+                  <mat-error
+                    *ngIf="
+                      signupForm.controls['firstName'].hasError('required')
+                    "
+                  >
+                    First name is <strong>required</strong>
+                  </mat-error>
+                  <mat-error
+                    *ngIf="
+                      !signupForm.controls['firstName'].hasError('required') &&
+                      signupForm.controls['firstName'].hasError('minlength')
+                    "
+                  >
+                    First name should have at least
+                    <strong>2</strong> characters
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <input
+                    matInput
+                    placeholder="Last name"
+                    formControlName="lastName"
+                    maxlength="100"
+                  />
+                  <mat-error
+                    *ngIf="
+                      signupForm.controls['lastName'].hasError('required') ||
+                      signupForm.controls['lastName'].hasError('minlength')
+                    "
+                  >
+                    Last name is <strong>required</strong> and should contain at
+                    least <strong>2</strong> characters
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <mat-label>Email address</mat-label>
+                  <input
+                    matInput
+                    type="email"
+                    placeholder="fed@ex.com"
+                    formControlName="emailAddress"
+                  />
+                  <mat-error
+                    *ngIf="
+                      signupForm.controls['emailAddress'].hasError('required')
+                    "
+                  >
+                    Email Address is <strong>required</strong>
+                  </mat-error>
+                  <mat-error
+                    *ngIf="
+                      (!signupForm.controls['emailAddress'].hasError(
+                        'required'
+                      ) &&
+                        signupForm.controls['emailAddress'].hasError(
+                          'email'
+                        )) ||
+                      signupForm.controls['emailAddress'].hasError(
+                        'asyncEmailInvalid'
+                      )
+                    "
+                  >
+                    Please enter a valid Email Address format or value
+                  </mat-error>
+                  <mat-error
+                    *ngIf="
+                      !signupForm.controls['emailAddress'].hasError(
+                        'required'
+                      ) &&
+                      signupForm.controls['emailAddress'].hasError(
+                        'asyncEmailUnk'
+                      )
+                    "
+                  >
+                    We could not verify this email. Please double check or
+                    provide different address.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <input
+                    matInput
+                    type="password"
+                    placeholder="Password"
+                    formControlName="password"
+                    maxlength="100"
+                  />
+                  <mat-error
+                    *ngIf="signupForm.controls['password'].hasError('required')"
+                  >
+                    Password is <strong>required</strong>
+                  </mat-error>
+                  <mat-error
+                    *ngIf="
+                      !signupForm.controls['password'].hasError('required') &&
+                      signupForm.controls['password'].hasError('minlength')
+                    "
+                  >
+                    Password must be at least <strong>8</strong> characters long
+                  </mat-error>
+                  <mat-error
+                    *ngIf="
+                      !signupForm.controls['password'].hasError('required') &&
+                      signupForm.controls['password'].hasError('pattern')
+                    "
+                  >
+                    Password must contain lower and uppercase letters
+                  </mat-error>
+
+                  <mat-error
+                    *ngIf="signupForm.errors?.passwordContainsUserInfo"
+                  >
+                    Password can not have first or last name
+                    <!-- FYI this error can be moved at form level and not necessarily at password field level, as it involves other fields too. depending on UX requirements -->
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <div class="row">
+              <!-- filler column -->
+              <div class="col"></div>
+              <div class="col-auto">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  type="submit"
+                  [disabled]="signupForm.invalid"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>
