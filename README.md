@@ -3,14 +3,17 @@
 ## Features: 
 * Autofocus on first name field on page load, saving user click/tabs
 * Fully keyboard accessible, user friendly and themed using Material
-* Mobile friendly using Bootstrap
-* Used boilerplate where possible to save time
+* Used Environment variables
 * Password, when contained first or last name shows error at field level, rather form level
 * Submit disabled till entire form is valid
+* Email validation is done asynchronously using 3rd party service
+* Mobile friendly using Bootstrap
+* Used boilerplate where possible to save time
 * Code formatted using Prettier, so may not please all eyes
 
 ## Todo: (not done deliberately to avoid scope creep)
 * maxlength="100" in form - the value for max length should match that of allowed limit by api/db/business rule - hence may be obtained from iniatial api call on page load
+* Signup/Login can be preloaded lazy modules. Also, They have to be prerequisit of User Profile and hence work along with an Augh Guard (CanActivate service)
 * i18n - get language specific labels from CMS/properties
 * Security - dont allow special characters in fiels like names
 * Middleware - use middleware/backend-for-frontend for features like api calls
@@ -28,6 +31,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
 
+## Setup
+* install nodejs
+* install angular cli
+* go to this folder and run `npm i`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -43,6 +51,14 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running test for a specific file: eg. signup-form.component
+
+`ng test --include='**/signup-form.component.spec.ts'`
+
+# unit test coverage report
+
+`ng test --no-watch --code-coverage`
 
 ## Running end-to-end tests
 

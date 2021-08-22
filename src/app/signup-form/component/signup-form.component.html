@@ -13,6 +13,7 @@
                 <mat-form-field class="full-width">
                   <input
                     matInput
+                    id="signupForm_firstName"
                     autofocus
                     placeholder="First name"
                     formControlName="firstName"
@@ -40,6 +41,7 @@
                 <mat-form-field class="full-width">
                   <input
                     matInput
+                    id="signupForm_lastName"
                     placeholder="Last name"
                     formControlName="lastName"
                     maxlength="100"
@@ -62,6 +64,7 @@
                   <mat-label>Email address</mat-label>
                   <input
                     matInput
+                    id="signupForm_email"
                     type="email"
                     placeholder="fed@ex.com"
                     formControlName="emailAddress"
@@ -109,6 +112,7 @@
                 <mat-form-field class="full-width">
                   <input
                     matInput
+                    id="signupForm_password"
                     type="password"
                     placeholder="Password"
                     formControlName="password"
@@ -153,6 +157,7 @@
               <div class="col-auto">
                 <button
                   mat-raised-button
+                  id="signupForm_submitButton"
                   color="primary"
                   type="submit"
                   [disabled]="signupForm.invalid"

@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSelectModule } from '@angular/material/select';
-import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SidenavComponent } from './sidenav/sidenav.component';
@@ -18,9 +16,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupFormComponent } from './signup-form/component/signup-form.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, SignupFormComponent, SidenavComponent],
+  declarations: [AppComponent, SignupFormComponent, SidenavComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,8 +27,6 @@ import { SignupFormComponent } from './signup-form/component/signup-form.compone
     HttpClientModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule,
-    MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
     LayoutModule,
