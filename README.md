@@ -13,11 +13,11 @@
 
 ## Todo: (not done deliberately to avoid scope creep)
 * maxlength="100" in form - the value for max length should match that of allowed limit by api/db/business rule - hence may be obtained from iniatial api call on page load
+* Unit testing of other files except signup form component. Error scenarios
 * Signup/Login can be preloaded lazy modules. Also, They have to be prerequisit of User Profile and hence work along with an Augh Guard (CanActivate service)
 * i18n - get language specific labels from CMS/properties
 * Security - dont allow special characters in fiels like names
 * Middleware - use middleware/backend-for-frontend for features like api calls
-* Foolproofing - validate user inputs like email with solutions suggested here https://soshace.com/verifying-an-email-address-without-sending-an-email-in-nodejs/ and when in doubt, validate by sending activation link
 ----------------------
 
 # Ref: 
@@ -25,7 +25,7 @@
 * https://getbootstrap.com/
 * https://material.angular.io/ - theme - deeppurple-amber
 * https://codinglatte.com/posts/angular/cool-password-validation-angular/
-
+* https://testing-angular.com/
 
 ------------------------------------------------------------------------
 
@@ -58,7 +58,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 # unit test coverage report
 
-`ng test --no-watch --code-coverage`
+`ng test --no-watch --code-coverage` --> see signup-client/coverage/signup-client/src/app/signup-form/component/index.html
 
 ## Running end-to-end tests
 

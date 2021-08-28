@@ -5,4 +5,11 @@ const mockUserObject = {
   lastName: 'Doe',
 };
 
-export { mockUserObject };
+const mockSingupFormValue = {
+  emailAddress: 'janedoe@apple.com',
+  firstName: 'Jane',
+  lastName: 'Doe',
+  password: 'asdfASDF',
+};
+
+export { mockUserObject, mockSingupFormValue };

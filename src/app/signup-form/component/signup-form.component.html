@@ -160,9 +160,12 @@
                   id="signupForm_submitButton"
                   color="primary"
                   type="submit"
-                  [disabled]="signupForm.invalid"
+                  [disabled]="signupForm.invalid || isLoading"
                 >
                   Submit
+                  <mat-icon *ngIf="isLoading"
+                    ><mat-spinner diameter="20"> </mat-spinner
+                  ></mat-icon>
                 </button>
               </div>
             </div>

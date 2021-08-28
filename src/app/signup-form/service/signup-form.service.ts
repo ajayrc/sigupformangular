@@ -24,7 +24,7 @@ export class SignupFormService {
     // ref: https://angular.io/guide/http#error-details
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error); // TODO MOVE LOGGING TO DEDICATED MONITORING SOLUTION
+      console.error('An error occurred:', error.error); // TODO move logging to monitoring system as suggested in my article https://ajayrc.medium.com/application-insights-using-azure-and-vuejs-error-handling-and-event-logging-in-front-end-to-40874d76f152
     } else {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong.
